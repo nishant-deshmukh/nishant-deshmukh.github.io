@@ -1,19 +1,14 @@
 export const Bio = {
   name: "Ragini Pandey",
-  roles: [
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "Programmer",
-  ],
+  roles: ["Full Stack Developer", "Programmer"],
   description:
-    "I am a JavaScript full-stack developer(MERN) and demonstrated history of working in the information technology and product development industry.",
+    "I am a Full-stack developer with a demonstrated history of working in the information technology and product development industry.",
   github: "https://github.com/ragini-pandey",
   resume:
     "https://drive.google.com/file/d/1zZucBWUcuj_pG3EN3GRFSaG_EvCuIHoi/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/ragini-pandey-dev/",
   twitter: "https://twitter.com/pandeyragini24",
   insta: "https://www.instagram.com/pandeyragini2407/",
-  // facebook: "https://www.facebook.com/pandeyragini2407/",
 };
 
 export const skills = [
@@ -93,11 +88,6 @@ export const skills = [
         image:
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
       },
-      // {
-      //   name: "Netlify",
-      //   image:
-      //     "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
-      // },
       {
         name: "VS Code",
         image:
@@ -108,16 +98,6 @@ export const skills = [
         image:
           "https://camo.githubusercontent.com/93b32389bf746009ca2370de7fe06c3b5146f4c99d99df65994f9ced0ba41685/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676574706f73746d616e2f676574706f73746d616e2d69636f6e2e737667",
       },
-      // {
-      //   name: "Adobe XD",
-      //   image:
-      //     "https://camo.githubusercontent.com/c205ecbe12500177d102169d97bc1c17c545155fdf5ec78c08d54ac53e5b38c1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f61646f62652d78642e737667",
-      // },
-      // {
-      //   name: "Figma",
-      //   image:
-      //     "https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667",
-      // },
     ],
   },
 ];
@@ -125,11 +105,14 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
+    img: "https://asset.brandfetch.io/idxpTwZdKL/id_xbL0oI7.jpeg",
     role: "Associate Product Software Engineer",
     company: "Wolters Kluwer",
-    date: "June 2023 - Present",
-    desc: "Working on Flipr Platforms, managing DevOps, and streamlining the process with automation.",
+    date: "June 2022 - Present",
+    project:
+      "Global provider of professional information, software solutions, and services for clinicians, accountants, lawyers, and tax, finance, audit, risk, compliance, and regulatory sectors.",
+    projectRole: "Full stack developer",
+    desc: "\u2022 Engaged in full-stack development to build and maintain CCH IQ Workbench and CCH IQ Profile Manager. \n \u2022 Developed API services using Node.js/Java/Nest.js.\n \u2022 Created custom UI components in React.js/Next.js.",
     skills: [
       "JavaScript",
       "React.js",
@@ -138,39 +121,44 @@ export const experiences = [
       "Next.js",
       "MySql",
       "Nest.js",
+      "Git",
     ],
-    doc: "https://media.licdn.com/dms/image/D4D2DAQFlp60ZqHuaFQ/profile-treasury-image-shrink_1280_1280/0/1691180828512?e=1692381600&v=beta&t=mM5Y_NE5EPlQhez5FAN6NLVSKcO_Ojt_9Gq3mnFGkAQ",
   },
 ];
 
 export const education = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
-    school: "G H Raisoni College of Engineering, Nagpur",
-    date: "Oct 2015 - Sep 2019",
-    grade: "8.48 CGPA",
-    desc: "Pusued a Bachelor's degree in Mechanical Engineering at G H Raisoni College of Engineering, Nagpur. I have a CGPA of 8.71. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.",
-    degree: "Bachelor of Engineering - Mechanical Engineering",
+    img: "https://pbs.twimg.com/profile_images/1337364620105805825/Y_5SbcCA_400x400.jpg",
+    school: "Centre for Development of Advanced Computing (C-DAC)",
+    date: "Sept 2021 - April 2022",
+    grade: "A",
+    degree: "Post Graduate Diploma in Advanced Computing (PG-DAC)",
   },
   {
     id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    school: "Jawahar Navodaya Vidyalaya, Nagpur",
-    date: "Apr 2014 - Apr 2015",
-    grade: "78.80%",
-    desc: "I completed my class 12 high school education at Jawahar Navodaya Vidyalaya, Nagpur, where I studied Science with Computer Science.",
-    degree: "ISC(XII), Science with Computer",
+    img: "https://upload.wikimedia.org/wikipedia/en/7/70/Logo_of_G.H._Raisoni_College_of_Engineering_Nagpur.png",
+    school: "G H Raisoni College of Engineering, Nagpur",
+    date: "June 2015 - May 2019",
+    grade: "8.48 CGPA",
+    degree: "Bachelor of Engineering - Mechanical Engineering",
   },
-  // {
-  //   id: 2,
-  //   img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-  //   school: "Jawahar Navodaya Vidyalaya, Nagpur",
-  //   date: "Apr 2017 - Apr 2019",
-  //   grade: "92.3%",
-  //   desc: "I completed my class 10 education at Methodist School, Dankuni, where I studied Science with Computer Application.",
-  //   degree: "ICSC(X), Science with Computer",
-  // },
+  {
+    id: 2,
+    img: "https://upload.wikimedia.org/wikipedia/en/8/82/Jawahar_Navodaya_Vidyalaya_logo.png",
+    school: "Jawahar Navodaya Vidyalaya, Nagpur",
+    date: "June 2014 - May 2015",
+    grade: "78.80%",
+    degree: "HSC(XII) Central Board of Secondary Education",
+  },
+  {
+    id: 3,
+    img: "https://upload.wikimedia.org/wikipedia/en/8/82/Jawahar_Navodaya_Vidyalaya_logo.png",
+    school: "Jawahar Navodaya Vidyalaya, Nagpur",
+    date: "June 2012 - May 2013",
+    grade: "9.60 CGPA",
+    degree: "SSC(X) Central Board of Secondary Education",
+  },
 ];
 
 export const projects = [
