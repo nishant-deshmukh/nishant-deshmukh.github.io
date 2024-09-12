@@ -5,7 +5,7 @@ export const Bio = {
     "I am a Full-stack developer with a demonstrated history of working in the information technology and product development industry.",
   github: "https://github.com/ragini-pandey",
   resume:
-    "https://drive.google.com/file/d/1aye8nIv1bQ4IBH18aMMqgLaPM6lqYBnD/view?usp=sharing",
+    "https://drive.google.com/file/d/17Tbu0ItYyljpzA4lDtOUAPrD7cFjWmWM/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/ragini-pandey-dev/",
   twitter: "https://twitter.com/pandeyragini24",
   insta: "https://www.instagram.com/pandeyragini2407/",
