@@ -95,7 +95,7 @@ export const skills = [
       {
         name: "Git",
         image:
-          "https://img.icons8.com/?size=100&id=0HyDNss5DL1B&format=png&color=000000",
+          "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
       },
       {
         name: "GitHub",
@@ -156,7 +156,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://upload.wikimedia.org/wikipedia/en/7/70/Logo_of_G.H._Raisoni_College_of_Engineering_Nagpur.png",
+    img: "https://rgicdn.s3.ap-south-1.amazonaws.com/raisoni/images/ghrce-img.avif",
     school: "G H Raisoni College of Engineering, Nagpur",
     date: "June 2015 - May 2019",
     grade: "8.48 CGPA",
