@@ -13,6 +13,26 @@ export const Bio = {
 
 export const skills = [
   {
+    title: "Programming Languages",
+    skills: [
+      {
+        name: "JavaScript",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
+      },
+      {
+        name: "TypeScript",
+        image:
+          "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      },
+      {
+        name: "Java",
+        image:
+          "https://cdn.worldvectorlogo.com/logos/java.svg",
+      }
+    ],
+  },
+  {
     title: "Frontend",
     skills: [
       {
@@ -37,17 +57,7 @@ export const skills = [
       {
         name: "CSS",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
-      },
-      {
-        name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      },
-      {
-        name: "TypeScript",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+          "https://cdn.worldvectorlogo.com/logos/css-3.svg",
       },
       {
         name: "Bootstrap",
