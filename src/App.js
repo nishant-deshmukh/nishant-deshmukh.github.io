@@ -1,5 +1,6 @@
-import { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
+import styled, { ThemeProvider } from "styled-components";
+
 import { darkTheme, lightTheme } from './utils/Themes.js'
 import Navbar from "./components/Navbar";
 import './App.css';
@@ -13,7 +14,6 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
-import styled from "styled-components";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -40,7 +40,7 @@ function App() {
             <Skills />
             <Experience />
           </Wrapper>
-          {/* <Projects openModal={openModal} setOpenModal={setOpenModal} /> */}
+          <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
             <Education />
             {/* <Contact /> */}
