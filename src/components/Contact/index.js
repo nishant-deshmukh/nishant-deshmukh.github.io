@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components'
-import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
 
@@ -125,7 +124,7 @@ const ContactButton = styled.input`
 const Contact = () => {
 
   //hooks
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const form = useRef();
 
   const handleSubmit = (e) => {
