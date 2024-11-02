@@ -2,6 +2,7 @@
   "homepage": "https://ragini-pandey.github.io",
   "name": "ragini-pandey-portfolio",
   "version": "0.1.0",
+  "author": "Ragini Pandey",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
