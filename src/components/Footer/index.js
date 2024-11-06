@@ -2,6 +2,7 @@ import styled from "styled-components";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+
 import { Bio } from "../../data/constants";
 
 const FooterContainer = styled.div`
@@ -91,7 +92,7 @@ function Footer() {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#experience">Experience</NavLink>
-          {/* <NavLink href="#projects">Projects</NavLink> */}
+          <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
@@ -105,7 +106,7 @@ function Footer() {
             <InstagramIcon />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2023 Ragini Pandey. All rights reserved.</Copyright>
+      <Copyright>&copy; 2024 Ragini Pandey. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );
