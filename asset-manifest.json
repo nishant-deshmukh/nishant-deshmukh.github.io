@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bf538fe7.css",
+    "main.js": "/static/js/main.229e536e.js",
+    "static/media/Nishant.jpg": "/static/media/Nishant.cd8b7af6aad4d8c0894b.jpg",
+    "index.html": "/index.html",
+    "main.bf538fe7.css.map": "/static/css/main.bf538fe7.css.map",
+    "main.229e536e.js.map": "/static/js/main.229e536e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf538fe7.css",
+    "static/js/main.229e536e.js"
+  ]
+}
