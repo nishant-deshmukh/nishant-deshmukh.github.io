@@ -18,6 +18,8 @@ const Navbar = () => {
       <Component href="#experience" onClick={toggleMenu}>Experience</Component>
       <Component href="#projects" onClick={toggleMenu}>Projects</Component>
       <Component href="#education" onClick={toggleMenu}>Education</Component>
+      <Component href="#contact" onClick={toggleMenu}>Contact</Component>
+
     </>
   );
 

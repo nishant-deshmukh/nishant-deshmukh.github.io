@@ -87,13 +87,16 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Ragini Pandey</Logo>
+        <Logo>Nishant Deshmukh</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
+
+          
         </Nav>
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.twitter} target="display">
@@ -106,7 +109,7 @@ function Footer() {
             <InstagramIcon />
           </SocialMediaIcon>
         </SocialMediaIcons>
-      <Copyright>&copy; 2024 Ragini Pandey. All rights reserved.</Copyright>
+      <Copyright>&copy; 2024 Nishant Deshmukh. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

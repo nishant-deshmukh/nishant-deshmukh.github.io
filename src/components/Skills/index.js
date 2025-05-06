@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { skills } from '../../data/constants';
 
 const getYearsAndMonthsSinceJoining = () => {
-  const joinDate = new Date('2022-06-01');
+  const joinDate = new Date('2024-06-17');
   const currentDate = new Date();
   
   let years = currentDate.getFullYear() - joinDate.getFullYear();
@@ -143,7 +143,7 @@ const Skills = () => {
       <Wrapper>
         <Title>Skills</Title>
         <Desc>
-          Here are some of my skills on which I have been working on for the past {years} years and {months} months.
+          Here are some of my skills on which I have been working on {/*for the past {years} years and  {months} months.*/}
         </Desc>
         <SkillsContainer>
           {skills.map((skill) => (

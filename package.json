@@ -1,8 +1,8 @@
 {
-  "homepage": "https://ragini-pandey.github.io",
-  "name": "ragini-pandey-portfolio",
+  "homepage": "https://nishant-deshmukh.github.io",
+  "name": "nishant-deshmukh-portfolio",
   "version": "0.1.0",
-  "author": "Ragini Pandey",
+  "author": "Nishant Deshmukh",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

@@ -71,8 +71,9 @@ const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_primary};  
 `
+
 
 const ContactInput = styled.input`
   flex: 1;
@@ -101,7 +102,6 @@ const ContactInputMessage = styled.textarea`
     border: 1px solid ${({ theme }) => theme.primary};
   }
 `
-
 const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
@@ -117,7 +117,20 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer; /* Indicates it's clickable */
+  transition: transform 0.2s ease, box-shadow 0.3s ease; /* Removed background-color transition */
+
+  &:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added subtle shadow on hover for depth */
+  }
+
+  &:active {
+    transform: scale(0.98); /* Slight scale down effect when clicked */
+    box-shadow: none; /* Removes shadow when clicked for an active state */
+  }
 `
+
 
 
 
@@ -129,7 +142,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
+    emailjs.sendForm('service_6p8tlai', 'template_7z4x7vg', form.current, 'DOuvmOi3D_Yf__srG')
       .then((result) => {
         setOpen(true);
         form.current.reset();
@@ -141,7 +154,7 @@ const Contact = () => {
 
 
   return (
-    <Container>
+    <Container id="contact">
       <Wrapper>
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
@@ -156,7 +169,7 @@ const Contact = () => {
         <Snackbar
           open={open}
           autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
+          onClose={() => setOpen(false)}
           message="Email sent successfully!"
           severity="success"
         />
