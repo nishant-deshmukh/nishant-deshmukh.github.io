@@ -173,7 +173,7 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://private-user-images.githubusercontent.com/158269449/440702467-19283dba-7422-4daf-98af-ffbc98668d04.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY1MjE4NTQsIm5iZiI6MTc0NjUyMTU1NCwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNzAyNDY3LTE5MjgzZGJhLTc0MjItNGRhZi05OGFmLWZmYmM5ODY2OGQwNC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDUwNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA1MDZUMDg1MjM0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWVlZTNkOTcyMmEwZmQ4MmQ3ZTQ0OWQ2MjczZTU5YTQ0YzNjYWEwYTRhNDc3MDZhNWY2MWJjMDU3ZmM0YjFjOCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.ZXzEWpM71foXXYHX1fiAuoo4USVXn9TbVG3cwbwvqEo",
+    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548192/sunbeamlogo3_ym3hsd.jpg",
     school: "SunBeam Institute of Information Technology, Karad-Pune",
     date: "Aug 2024 - Feb 2025",
     grade: "B",
@@ -181,7 +181,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://private-user-images.githubusercontent.com/158269449/440695265-f72db340-99c4-438e-a123-a337c8baeec8.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY1MjA1MzgsIm5iZiI6MTc0NjUyMDIzOCwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNjk1MjY1LWY3MmRiMzQwLTk5YzQtNDM4ZS1hMTIzLWEzMzdjOGJhZWVjOC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNlQwODMwMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMjdkYzFhZmE5N2Y4ODYxYWMzNjlkYjk0MGJmY2M3NmRhNzgyNmY5Yjk3ZWVlY2ViYzY5NDBkOWI5ODUzNGQ0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.BkL99Zfrtn7oOJb2jUY2eLlG9IKAhf0ccfV5FMpGV_k",
+    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746545565/met_kqk7vx.jpg",
     school: "Mumbai Educational Trust, MET League of Colleges",
     date: "June 2018 - May 2023",
     grade: "7.77 CGPA",
@@ -189,7 +189,7 @@ export const education = [
   },
   {
     id: 2,
-    img: "https://private-user-images.githubusercontent.com/158269449/440697158-15c6342a-1b77-4825-8293-33b903259ff9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY1MjA4NzYsIm5iZiI6MTc0NjUyMDU3NiwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNjk3MTU4LTE1YzYzNDJhLTFiNzctNDgyNS04MjkzLTMzYjkwMzI1OWZmOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNlQwODM2MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOTNmYzE4ZTA2OWQzZGIzMzc1YjJjYmI0MTQ3ZjE3M2ZhYTI5Mjg2ZjI2N2ExYzBiNzYxNzAyZTczN2Y1MjVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.xoDPuSO2wHVPwTdXytD6MfCx3zZsbDrvzWmCbPVizw8",
+    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548205/440697158-15c6342a-1b77-4825-8293-33b903259ff9_mbiyct.png",
     school: "K.J. Mehata & E.Y. Phadol Jr College, Nasik",
     date: "June 2017 - May 2018",
     grade: "64.00%",
@@ -197,7 +197,8 @@ export const education = [
   },
   {
     id: 3,
-    img: "https://private-user-images.githubusercontent.com/158269449/440697158-15c6342a-1b77-4825-8293-33b903259ff9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY1MjA4NzYsIm5iZiI6MTc0NjUyMDU3NiwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNjk3MTU4LTE1YzYzNDJhLTFiNzctNDgyNS04MjkzLTMzYjkwMzI1OWZmOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNlQwODM2MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOTNmYzE4ZTA2OWQzZGIzMzc1YjJjYmI0MTQ3ZjE3M2ZhYTI5Mjg2ZjI2N2ExYzBiNzYxNzAyZTczN2Y1MjVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.xoDPuSO2wHVPwTdXytD6MfCx3zZsbDrvzWmCbPVizw8",
+    img:
+     "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548205/440697158-15c6342a-1b77-4825-8293-33b903259ff9_mbiyct.png",
     school: "K.J. Mehata & E.Y. Phadol Jr College, Nasik",
     date: "June 2015 - May 2016",
     grade: "80.60%",
@@ -212,7 +213,7 @@ export const projects = [
     date: "Mar 2025",
     description: "Runnerz is a web application built with Java and Spring Boot 3 that allows users to track and manage their running data. Users can record, view, modify, and delete their run details, such as distance, time, and date.",
     image:
-    "https://private-user-images.githubusercontent.com/158269449/440432987-3916f6ee-ff51-4f15-a5c2-c1d21638e72f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0NTk5ODAsIm5iZiI6MTc0NjQ1OTY4MCwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNDMyOTg3LTM5MTZmNmVlLWZmNTEtNGYxNS1hNWMyLWMxZDIxNjM4ZTcyZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNVQxNTQxMjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hYmFmZmFmOTdjZWM3NDYwMDc1NzA3ZTc1NWY1ODdmOGExOTE3Y2UwZDJhNzQyZDBiZTk3OGMwYzk2YjllZmRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.cR3R8DchPx3ppKcXugSVvPE3hOmon6mTd3qm6UoeO6U",
+    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548228/440432987-3916f6ee-ff51-4f15-a5c2-c1d21638e72f_kglwat.png",
     tags: ["React Js", "Redux", "Firebase", "Firestore"],
     category: "web app",
     github: "https://github.com/nishant-deshmukh/runnerz-run-management",
@@ -225,7 +226,7 @@ export const projects = [
     description:
       "StayHub is a user-friendly platform that simplifies the process of finding and booking PG (Paying Guest) accommodations. It allows PG owners to register, list detailed property information, manage room availability, and ensure accurate, up-to-date listings for potential tenants.",
     image:
-      "https://private-user-images.githubusercontent.com/158269449/440431248-94b2fd3b-dcef-4cec-bd15-2033b477c86d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0NTk5ODAsIm5iZiI6MTc0NjQ1OTY4MCwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNDMxMjQ4LTk0YjJmZDNiLWRjZWYtNGNlYy1iZDE1LTIwMzNiNDc3Yzg2ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNVQxNTQxMjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMDRmZmE4ZDNmM2FmMjI3MjQ4NzM0YjFhN2YzYTUxMWJmMGQ4YzEzZWU5YTk2ODVkMzBlMmY3YTQzMDBkOWRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.FuOnhh4a08gDn1U3F2I9bPDxo32GQoqDx7ANbtvTQ8E",
+    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548500/440431248-94b2fd3b-dcef-4cec-bd15-2033b477c86d_nz8uyr.png",
     tags: ["React Js", "Firebase", "Firestore", "Node JS"],
     category: "web app",
     github: "https://github.com/smokiesam/CDAC_PROJECT_KD_J028",
@@ -237,8 +238,8 @@ export const projects = [
     date: "Apr 2025",
     description: "work in progress",
     image:
-    "https://private-user-images.githubusercontent.com/158269449/440714486-32de8a9e-32ba-4a55-becd-5a5a0d6cb15a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY1MjM5OTYsIm5iZiI6MTc0NjUyMzY5NiwicGF0aCI6Ii8xNTgyNjk0NDkvNDQwNzE0NDg2LTMyZGU4YTllLTMyYmEtNGE1NS1iZWNkLTVhNWEwZDZjYjE1YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNlQwOTI4MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03Njc4YzE0OGExMzkxYTllMjU3YTk0NGI2NDIwODE3MDBmYTA3MmRkMDZlNzZiMzAxYjVhYmM3MmU0YjY3NWMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.AE26ofAaiwarfsebceKbSNHkVGKaKbTTcbkk4bkeIww",
-     tags: ["React Js", "Node JS"],
+    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548186/link2-Photoroom_uahsle.png",
+    tags: ["React Js", "Node JS"],
     category: "web app",
     github: "",
     webapp: "",
