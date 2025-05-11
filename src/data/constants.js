@@ -5,7 +5,7 @@ export const Bio = {
     "I am a Full-stack developer with a demonstrated history of training in the information technology and product development field.",
   github: "https://github.com/nishant-deshmukh",
   resume:
-    "https://drive.google.com/file/d/18d5iNiPXH9ixs7omVG4fLX4GSlrz4xV8/view?usp=drive_link",
+    "https://drive.google.com/file/d/1WtKz7UM95PdvAEHFFZgU8yUr1axKA18F/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/ndeshmukhwork",
   twitter: "https://twitter.com",
   insta: "https://www.instagram.com/nishant362001/",
