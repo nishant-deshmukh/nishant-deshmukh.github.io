@@ -187,7 +187,7 @@ export const certifications = [
     // Placeholder: replace with the next certification when earned,
     // or delete this block.
     name: "[Next certification]",
-    status: "Add when earned",
+    status: "In Progress",
     image: nextCertBadge,
     placeholder: true,
   },
