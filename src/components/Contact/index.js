@@ -1,181 +1,157 @@
-import React, { useRef, useState } from 'react';
-import styled from 'styled-components'
-import emailjs from '@emailjs/browser';
-import { Snackbar } from '@mui/material';
+import styled from "styled-components";
+import { Bio, contact } from "../../data/constants";
+import Section from "../Section";
+import { CloudIcon, GitHubIcon, LinkedInIcon, LocationIcon, MailIcon, PhoneIcon } from "../Icons";
 
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-position: relative;
-z-index: 1;
-align-items: center;
-@media (max-width: 960px) {
-    padding: 0px;
-}
-`
-
-const Wrapper = styled.div`
-position: relative;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-direction: column;
-width: 100%;
-max-width: 1350px;
-padding: 0px 0px 80px 0px;
-gap: 12px;
-@media (max-width: 960px) {
-    flex-direction: column;
-}
-`
-
-const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
-  }
-`;
-
-const Desc = styled.div`
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-    @media (max-width: 768px) {
-        margin-top: 12px;
-        font-size: 16px;
-    }
-`;
-
-
-const ContactForm = styled.form`
-  width: 95%;
-  max-width: 600px;
+const Layout = styled.div`
   display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.card};
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-  margin-top: 28px;
-  gap: 12px;
-`
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+`;
 
-const ContactTitle = styled.div`
-  font-size: 24px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};  
-`
+const Intro = styled.div`
+  flex: 1 1 360px;
+  min-width: 0;
+`;
 
+const Heading = styled.h3`
+  font: 700 30px/1.2 ${({ theme }) => theme.headingFont};
+  color: ${({ theme }) => theme.textPrimary};
+  margin-bottom: 14px;
 
-const ContactInput = styled.input`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+  @media (max-width: 600px) {
+    font-size: 24px;
   }
-`
+`;
 
-const ContactInputMessage = styled.textarea`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+const Text = styled.p`
+  font: 400 16px/1.65 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textBody};
+  margin-bottom: 26px;
+`;
+
+const EmailButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 26px;
   border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
-  }
-`
-const ContactButton = styled.input`
-  width: 100%;
+  background: ${({ theme }) => theme.primary};
+  color: #ffffff;
+  font: 600 15px/1 ${({ theme }) => theme.bodyFont};
   text-decoration: none;
-  text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  padding: 13px 16px;
-  margin-top: 2px;
-  border-radius: 12px;
-  border: none;
-  color: ${({ theme }) => theme.text_primary};
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer; /* Indicates it's clickable */
-  transition: transform 0.2s ease, box-shadow 0.3s ease; /* Removed background-color transition */
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: scale(1.05); /* Slight scale effect on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added subtle shadow on hover for depth */
+    color: #ffffff;
+    background: ${({ theme }) => theme.primaryDark};
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(1, 118, 211, 0.3);
   }
+`;
 
-  &:active {
-    transform: scale(0.98); /* Slight scale down effect when clicked */
-    box-shadow: none; /* Removes shadow when clicked for an active state */
+const Cards = styled.div`
+  flex: 1.4 1 480px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
   }
-`
+`;
 
+const Card = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: ${({ theme }) => theme.surface};
+  box-shadow: ${({ theme }) => theme.cardShadow};
+  text-decoration: none;
+  min-width: 0;
+  grid-column: ${({ $wide }) => ($wide ? "1 / -1" : "auto")};
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-
-
-const Contact = () => {
-
-  //hooks
-  const [open, setOpen] = useState(false);
-  const form = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm('service_6p8tlai', 'template_7z4x7vg', form.current, 'DOuvmOi3D_Yf__srG')
-      .then((result) => {
-        setOpen(true);
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
-      });
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: ${({ theme }) => theme.cardShadowHover};
   }
+`;
 
+const IconBox = styled.span`
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.tagBg};
+  color: ${({ theme }) => theme.primary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+`;
 
+const Label = styled.span`
+  display: block;
+  font: 500 12px/1 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textMuted};
+  margin-bottom: 6px;
+`;
 
-  return (
-    <Container id="contact">
-      <Wrapper>
-        <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
-        </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
-      </Wrapper>
-    </Container>
-  )
-}
+const Value = styled.span`
+  display: block;
+  font: 600 15px/1.3 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textPrimary};
+  overflow-wrap: anywhere;
+`;
 
-export default Contact
+const ContactCard = ({ icon, label, value, href, wide }) => (
+  <Card
+    href={href}
+    $wide={wide}
+    {...(href && href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    as={href ? "a" : "div"}
+  >
+    <IconBox>{icon}</IconBox>
+    <span>
+      <Label>{label}</Label>
+      <Value>{value}</Value>
+    </span>
+  </Card>
+);
+
+const Contact = ({ tone }) => (
+  <Section id="contact" title="Contact" tone={tone}>
+    <Layout>
+      <Intro>
+        <Heading>{contact.heading}</Heading>
+        <Text>{contact.text}</Text>
+        <EmailButton href={`mailto:${Bio.email}`}>
+          <MailIcon width={18} height={18} />
+          Email Me
+        </EmailButton>
+      </Intro>
+      <Cards>
+        <ContactCard icon={<MailIcon />} label="Email" value={Bio.email} href={`mailto:${Bio.email}`} wide />
+        {Bio.phone && (
+          <ContactCard
+            icon={<PhoneIcon />}
+            label="Phone"
+            value={Bio.phone}
+            href={`tel:${Bio.phone.replace(/\s/g, "")}`}
+          />
+        )}
+        <ContactCard icon={<LocationIcon />} label="Location" value={Bio.location} />
+        <ContactCard icon={<LinkedInIcon />} label="LinkedIn" value="nishant-deshmukh-dev" href={Bio.linkedin} />
+        <ContactCard icon={<CloudIcon />} label="Trailhead" value="Trailblazer profile" href={Bio.trailhead} />
+        <ContactCard icon={<GitHubIcon />} label="GitHub" value="nishant-deshmukh" href={Bio.github} />
+      </Cards>
+    </Layout>
+  </Section>
+);
+
+export default Contact;

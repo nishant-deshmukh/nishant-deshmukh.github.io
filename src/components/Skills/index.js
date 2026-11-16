@@ -1,168 +1,110 @@
-import React from 'react';
-import styled from 'styled-components';
-import { skills } from '../../data/constants';
+import styled from "styled-components";
+import { exposure, skills } from "../../data/constants";
+import Section from "../Section";
+import SkillChip from "../Cards/SkillChip";
 
-const getYearsAndMonthsSinceJoining = () => {
-  const joinDate = new Date('2024-06-17');
-  const currentDate = new Date();
-  
-  let years = currentDate.getFullYear() - joinDate.getFullYear();
-  let months = currentDate.getMonth() - joinDate.getMonth();
-  
-  if (months < 0 || (months === 0 && currentDate.getDate() < joinDate.getDate())) {
-    years--;
-    months += 12;
-  }
-  
-  if (currentDate.getDate() < joinDate.getDate()) {
-    months--;
-  }
-  
-  return { years, months };
-};
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1100px;
-  gap: 12px;
-  @media (max-width: 960px) {
-    flex-direction: column;
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
   }
 `;
 
-export const Title = styled.div`
-  font-size: 42px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-
-export const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
-const SkillsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  gap: 30px;
-  justify-content: center;
-`;
-
-const Skill = styled.div`
-  width: 100%;
-  max-width: 500px;
-  background: ${({ theme }) => theme.card};
-  border: 0.1px solid #854CE6;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+const Group = styled.div`
+  background: ${({ theme }) => theme.surface};
+  border: 1px solid ${({ theme, $highlight }) => ($highlight ? theme.primary : theme.cardBorder)};
   border-radius: 16px;
-  padding: 18px 36px;
-  @media (max-width: 768px) {
-    max-width: 400px;
-    padding: 10px 36px;
-  }
-  @media (max-width: 500px) {
-    max-width: 330px;
-    padding: 10px 36px;
-  }
+  padding: 26px;
+  box-shadow: ${({ theme }) => theme.cardShadow};
 `;
 
-const SkillTitle = styled.h2`
-  font-size: 28px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_secondary};
-  margin-bottom: 20px;
-  text-align: center;
+const GroupTitle = styled.h3`
+  font: 600 18px/1.2 ${({ theme }) => theme.headingFont};
+  color: ${({ theme }) => theme.textPrimary};
+  margin-bottom: 16px;
 `;
 
-const SkillList = styled.div`
+const Chips = styled.div`
   display: flex;
-  justify-content: center; 
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-`;
-
-const SkillItem = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_primary + 80};
-  border: 1px solid ${({ theme }) => theme.text_primary + 80};
-  border-radius: 12px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  @media (max-width: 500px) {
-    font-size: 14px;
-    padding: 6px 12px;
+`;
+
+/* ---------- Wide "Exposure & Training" box under the six groups ---------- */
+
+const WideBox = styled(Group)`
+  grid-column: 1 / -1;
+  border-style: dashed;
+  border-color: ${({ theme }) => theme.chipBorder};
+  background: linear-gradient(90deg, ${({ theme }) => theme.surface}, ${({ theme }) => theme.highlightBg});
+`;
+
+const WideHeader = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 16px;
+
+  h3 {
+    margin: 0;
   }
 `;
 
-const SkillImage = styled.img`
-  width: 24px;
-  height: 24px;
+const WideNote = styled.span`
+  font: 400 13px/1.4 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textMuted};
 `;
 
-const Skills = () => {
-  const { years, months } = getYearsAndMonthsSinceJoining();
+const Label = styled.span`
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  margin-left: 2px;
+  border-radius: 999px;
+  background: ${({ theme }) => theme.surface};
+  border: 1px solid ${({ theme }) => theme.chipBorder};
+  color: ${({ theme }) => theme.textMuted};
+  font: 600 10px/1 ${({ theme }) => theme.bodyFont};
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+`;
 
-  return (
-    <Container id="skills">
-      <Wrapper>
-        <Title>Skills</Title>
-        <Desc>
-          Here are some of my skills on which I have been working on {/*for the past {years} years and  {months} months.*/}
-        </Desc>
-        <SkillsContainer>
-          {skills.map((skill) => (
-            <Skill key={skill.title}>
-              <SkillTitle>{skill.title}</SkillTitle>
-              <SkillList>
-                {skill.skills.map((item) => (
-                  <SkillItem key={item.name}>
-                    <SkillImage src={item.image} alt={item.name} />
-                    {item.name}
-                  </SkillItem>
-                ))}
-              </SkillList>
-            </Skill>
-          ))}
-        </SkillsContainer>
-      </Wrapper>
-    </Container>
-  );
-};
+const Skills = ({ tone }) => (
+  <Section id="skills" title="Skills" tone={tone}>
+    <Grid>
+      {skills.map((group) => (
+        <Group key={group.title} $highlight={group.highlight}>
+          <GroupTitle>{group.title}</GroupTitle>
+          <Chips>
+            {group.skills.map((skill) => (
+              <SkillChip key={skill.name} skill={skill} />
+            ))}
+          </Chips>
+        </Group>
+      ))}
+
+      {exposure && exposure.items.length > 0 && (
+        <WideBox>
+          <WideHeader>
+            <GroupTitle as="h3">{exposure.title}</GroupTitle>
+            <WideNote>Tools I've trained on or worked with alongside client projects</WideNote>
+          </WideHeader>
+          <Chips>
+            {exposure.items.map((item) => (
+              <SkillChip key={item.name} skill={item}>
+                {item.label && <Label>{item.label}</Label>}
+              </SkillChip>
+            ))}
+          </Chips>
+        </WideBox>
+      )}
+    </Grid>
+  </Section>
+);
 
 export default Skills;

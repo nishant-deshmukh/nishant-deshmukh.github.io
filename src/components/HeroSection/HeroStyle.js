@@ -1,203 +1,265 @@
-import styled from "styled-components";
-import _default from "../../themes/default";
+import styled, { keyframes } from "styled-components";
 
-export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.card_light};
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 80px 30px;
-  @media (max-width: 960px) {
-    padding: 66px 16px;
-  }
-  @media (max-width: 640) {
-    padding: 32px 16px;
-  }
-  z-index: 1;
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
 `;
 
-export const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
+const float = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+`;
+
+const drift = keyframes`
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(18px); }
+`;
+
+const pulse = keyframes`
+  0% { box-shadow: 0 0 0 0 rgba(46, 132, 74, 0.45); }
+  70% { box-shadow: 0 0 0 8px rgba(46, 132, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 132, 74, 0); }
+`;
+
+export const HeroWrapper = styled.section`
+  position: relative;
   overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
-  }
-`;
-
-export const HeroInnerContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-export const HeroLeftContainer = styled.div`
-  width: 100%;
-  order: 1;
-  @media (max-width: 960px) {
-    order: 2;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  @media (max-width: 640px) {
-    order: 2;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-export const HeroRightContainer = styled.div`
-  width: 100%;
-  display: flex;
-  order: 2;
-  justify-content: end;
-  gap: 12px;
-  @media (max-width: 960px) {
-    order: 1;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
-  }
-`;
-
-export const Img = styled.img`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.primary};
+  background: radial-gradient(900px 500px at 78% 30%, rgba(1, 118, 211, 0.16), rgba(244, 247, 251, 0) 70%),
+    linear-gradient(180deg, #e6f0fb 0%, ${({ theme }) => theme.bg} 100%);
+  padding: 88px 0 104px;
 
   @media (max-width: 768px) {
-    max-width: 400px;
-    max-height: 400px;
-  }
-
-  @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
+    padding: 48px 0 72px;
   }
 `;
 
-export const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
-  }
+// Faint dot grid behind the hero
+export const Dots = styled.div`
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(1, 118, 211, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 85%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 85%);
+  pointer-events: none;
 `;
 
-export const TextLoop = styled.div`
-  font-weight: 600;
-  font-size: 32px;
+// Soft cloud shapes drifting slowly in the background
+export const Cloud = styled.svg`
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: ${drift} ${({ $speed }) => $speed || 14}s ease-in-out infinite;
+  filter: drop-shadow(0 8px 18px rgba(1, 118, 211, 0.08));
+`;
+
+export const HeroInner = styled.div`
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
   display: flex;
-  gap: 12px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-  @media (max-width: 640px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 56px;
+
+  @media (max-width: 600px) {
+    padding: 0 20px;
+    gap: 48px;
   }
 `;
 
-export const Span = styled.span`
+export const HeroText = styled.div`
+  flex: 999 1 520px;
+  min-width: 0;
+  animation: ${fadeUp} 0.7s ease both;
+`;
+
+export const StatusPill = styled.p`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: ${({ theme }) => theme.surface};
+  border: 1px solid ${({ theme }) => theme.chipBorder};
+  box-shadow: ${({ theme }) => theme.cardShadow};
+  font: 500 13px/1 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textSoft};
+  margin-bottom: 22px;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.success};
+    animation: ${pulse} 2s infinite;
+  }
+`;
+
+export const Eyebrow = styled.p`
+  font: 600 13px/1.3 ${({ theme }) => theme.bodyFont};
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: ${({ theme }) => theme.primary};
-  cursor: pointer;
+  margin-bottom: 14px;
 `;
 
-export const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
+export const Name = styled.h1`
+  font: 700 64px/1.05 ${({ theme }) => theme.headingFont};
+  color: ${({ theme }) => theme.textPrimary};
+  margin-bottom: 20px;
 
-  @media (max-width: 960px) {
-    text-align: center;
+  em {
+    font-style: normal;
+    background: linear-gradient(90deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.primaryLight});
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  @media (max-width: 640px) {
-    font-size: 16px;
-    line-height: 32px;
+  @media (max-width: 768px) {
+    font-size: 42px;
   }
+`;
+
+export const Tagline = styled.p`
+  font: 400 19px/1.65 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textBody};
+  max-width: 600px;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
 `;
 
 export const ResumeButton = styled.a`
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    width: 95%;
-    max-width: 300px;
-    text-align: center;
-    padding: 16px 0;
-    color:${({ theme }) => theme.white};
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
-    &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 26px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.primary};
+  color: #ffffff;
+  font: 600 15px/1 ${({ theme }) => theme.bodyFont};
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 
+  &:hover {
+    color: #ffffff;
+    background: ${({ theme }) => theme.primaryDark};
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(1, 118, 211, 0.3);
+  }
+`;
+
+export const IconRow = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const IconLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.surface};
+  border: 1px solid ${({ theme }) => theme.chipBorder};
+  color: ${({ theme }) => theme.textSoft};
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.primary};
+    border-color: ${({ theme }) => theme.primary};
+    color: #ffffff;
+    transform: translateY(-3px);
+  }
+`;
+
+export const PhotoWrap = styled.div`
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const PhotoFrame = styled.div`
+  position: relative;
+  width: 340px;
+  height: 420px;
+
+  /* Blue offset panel behind the photo */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 22px -22px -22px 22px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.primaryLight});
+    opacity: 0.9;
+  }
+
+  @media (max-width: 600px) {
+    width: 260px;
+    height: 320px;
+  }
+`;
+
+export const Photo = styled.img`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 24px 60px rgba(3, 45, 96, 0.18);
+`;
+
+// Small skill tags floating around the photo
+export const FloatChip = styled.span`
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.surface};
+  box-shadow: 0 10px 28px rgba(3, 45, 96, 0.14);
+  font: 600 13px/1 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textPrimary};
+  white-space: nowrap;
+  animation: ${float} ${({ $speed }) => $speed || 4}s ease-in-out infinite;
+  animation-delay: ${({ $delay }) => $delay || 0}s;
+
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.primaryLight};
+  }
+
+  @media (max-width: 600px) {
+    height: 34px;
+    font-size: 12px;
+
+    /* Keep the tags inside small screens */
+    &[data-side="left"] {
+      left: -14px !important;
+    }
+    &[data-side="right"] {
+      right: -14px !important;
+    }
+  }
 `;

@@ -1,118 +1,62 @@
 import styled from "styled-components";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-
 import { Bio } from "../../data/constants";
 
-const FooterContainer = styled.div`
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  //background: linear-gradient(100.26deg, rgba(0, 102, 255, 0.05) 42.33%, rgba(150, 0, 225, 0.05) 127.07%);
+const Wrapper = styled.footer`
+  background: ${({ theme }) => theme.surface};
+  border-top: 1px solid ${({ theme }) => theme.divider};
+  padding: 40px 0;
 `;
 
-const FooterWrapper = styled.footer`
-  width: 100%;
-  max-width: 1200px;
+const Inner = styled.div`
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 1rem;
-  color: ${({ theme }) => theme.text_primary};
-`;
+  justify-content: space-between;
+  gap: 20px;
 
-const Logo = styled.h1`
-  font-weight: 600;
-  font-size: 20px;
-  color: ${({ theme }) => theme.primary};
-`;
-
-const Nav = styled.nav`
-  width: 100%;
-  max-width: 800px;
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-`;
-
-const SocialMediaIcons = styled.div`
-  display: flex;
-  margin-top: 1rem;
-`;
-
-const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
+  @media (max-width: 600px) {
+    padding: 0 20px;
   }
 `;
 
 const Copyright = styled.p`
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.soft2};
-  text-align: center;
+  font: 400 14px/1.5 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textMuted};
 `;
 
-function Footer() {
-  return (
-    <FooterContainer>
-      <FooterWrapper>
-        <Logo>Nishant Deshmukh</Logo>
-        <Nav>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
 
-          
-        </Nav>
-        <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <TwitterIcon />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display">
-            <LinkedInIcon />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
-            <InstagramIcon />
-          </SocialMediaIcon>
-        </SocialMediaIcons>
-      <Copyright>&copy; 2024 Nishant Deshmukh. All rights reserved.</Copyright>
-      </FooterWrapper>
-    </FooterContainer>
-  );
-}
+const Link = styled.a`
+  font: 500 14px/1 ${({ theme }) => theme.bodyFont};
+  color: ${({ theme }) => theme.textSoft};
+  text-decoration: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;
+
+const Footer = () => (
+  <Wrapper>
+    <Inner>
+      <Copyright>
+        © {new Date().getFullYear()} {Bio.name} · Salesforce Developer
+      </Copyright>
+      <Links>
+        <Link href={Bio.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+        <Link href={Bio.trailhead} target="_blank" rel="noopener noreferrer">Trailhead</Link>
+        <Link href={Bio.github} target="_blank" rel="noopener noreferrer">GitHub</Link>
+        <Link href={`mailto:${Bio.email}`}>Email</Link>
+      </Links>
+    </Inner>
+  </Wrapper>
+);
 
 export default Footer;

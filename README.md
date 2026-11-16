@@ -1,35 +1,63 @@
-# My Portfolio
-Welcome to my portfolio! This project showcases my skills, projects, and experiences as a web developer.
+# Nishant Deshmukh | Salesforce Developer Portfolio
 
-## Introduction
-My Portfolio is a React.js application that serves as an online portfolio to showcase my work, skills, and achievements. It provides an overview of my background, displays my projects, and offers a way to contact me.
+Personal portfolio built with React (Create React App) and styled-components, published on GitHub Pages at https://nishant-deshmukh.github.io
 
-## Features
-- About Me: An overview of my background, skills, and experiences.
-<!-- - Projects: A collection of my notable projects with descriptions, screenshots, and links. -->
-- Skills: A list of my technical skills and proficiencies.
-- Resume: A link to download my resume.
-- Contact: A form to send me messages or inquiries.
+## Run locally
 
-## Technologies Used
-- React.js: A JavaScript library for building user interfaces.
-- HTML5 & CSS3: Markup and styling languages for building web pages.
-- JavaScript: A programming language for adding interactivity to web applications.
-- Style-Components: A CSS framework for creating responsive and mobile-first designs.
-- Git: A version control system for tracking changes and collaborating on projects.
-- GitHub Pages: A platform for hosting and deploying web applications.
+```bash
+npm install
+npm start          # opens http://localhost:3000
+```
 
-## Installation
-To run this portfolio locally, follow these steps:
+## Publish
 
-1. Clone the repository: `git clone https://github.com/nishant-deshmukh/nishant-deshmukh.github.io.git`
-2. Navigate to the project directory: `cd nishant-deshmukh.github.io`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+```bash
+npm run deploy     # builds the site and pushes it to the gh-pages branch
+```
 
-## Usage
-After installing and running the project locally, you can navigate through the different sections of the portfolio using the navigation menu. Explore the About Me section to learn more about my background and skills. Visit the Projects section to see detailed information about my projects, including descriptions and screenshots. Use the Contact section to send me a message or inquiry.
+## How to update the site
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+| What to change | Where |
+|---|---|
+| Any text, links, skills, experience, projects, certifications | `src/data/constants.js` |
+| Profile photo | Replace `src/images/profile.png` (portrait, about 680 × 840) |
+| Project screenshots | Replace files in `src/images/projects/` (about 1200 × 760) |
+| Certification badges | Replace files in `src/images/certifications/` (square, about 352 × 352) |
+| Skill icons | Replace or add files in `src/images/skills/` |
+| Resume | Put `Nishant_Deshmukh_Resume.pdf` in `public/resume/` |
+| Colors and fonts | `src/utils/theme.js` |
+| Show or hide Salesforce Implementations | `showImplementations` (true / false) at the top of `src/data/constants.js` |
+| "Open to roles" pill above the name | `Bio.openToWork` in `src/data/constants.js` (set to `""` to hide) |
+| Phone number in Contact | `Bio.phone` in `src/data/constants.js` (empty = hidden) |
+| Tags floating around the photo | `Bio.heroChips` in `src/data/constants.js` |
+| Section order | `src/App.js` and `allNavLinks` in `src/data/constants.js` |
+
+To replace an image, keep the same file name. If you use a new name or a
+different file type (for example `.jpg` instead of `.png`), update the
+matching `import` line at the top of `src/data/constants.js`.
+
+## Folder structure
+
+```
+public/
+  favicon.ico
+  index.html
+  resume/                  ← resume PDF goes here
+src/
+  App.js                   ← section order
+  App.css                  ← global styles
+  data/constants.js        ← ALL site content
+  utils/theme.js           ← colors and fonts
+  images/
+    profile.png
+    skills/
+    certifications/
+    projects/
+  components/
+    Navbar/  HeroSection/  About/  Skills/  Certifications/
+    Experience/  Implementations/  Projects/  Contact/  Footer/
+    BackToTop/             ← corner button after scrolling
+    Section/               ← shared section title, background and fade-in
+    Cards/                 ← skill chip, experience, implementation, project cards
+    Icons/                 ← small line icons
+```

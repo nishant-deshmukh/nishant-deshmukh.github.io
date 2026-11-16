@@ -1,41 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  margin: 0px !important;
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
 }
 
-/* width */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: #f4f7fb;
+  color: #032d60;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #0b5cab;
+}
+
+a:hover {
+  color: #014486;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 80px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f7fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbd9f5;
+  border-radius: 6px;
+}
+
+/* Turn off animations for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background:#222A35;
+}
+
+/* Scale the whole site down a little on laptops and desktops.
+   1 = normal size, 0.85 = 85%. Phones are not affected. */
+@media (min-width: 1024px) {
+  #root {
+    zoom: 0.85;
   }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #575C66;
-    border-radius: 6px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #626970;
-  }
+}

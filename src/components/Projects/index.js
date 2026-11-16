@@ -1,39 +1,26 @@
-import { useState } from 'react';
-import { Container, Wrapper, Title, Desc, CardContainer, ToggleButtonGroup, ToggleButton } from './ProjectsStyle';
-import ProjectCard from '../Cards/ProjectCards';
-import { projects } from '../../data/constants';
+import styled from "styled-components";
+import { projects } from "../../data/constants";
+import Section from "../Section";
+import ProjectCard from "../Cards/ProjectCard";
 
-const Projects = ({ openModal, setOpenModal }) => {
-  const [toggle, setToggle] = useState('all');
-  const filteredProjects = toggle === 'all' ? projects : projects.filter((item) => item.category === toggle);
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 
-  return (
-    <Container id="projects">
-      <Wrapper>
-        <Title>Projects</Title>
-        <Desc>
-          I have worked on a wide range of web apps. Here are some of my projects.
-        </Desc>
-        <ToggleButtonGroup>
-          {['all', 'web app'].map((category) => (
-            <ToggleButton
-              key={category}
-              active={toggle === category}
-              value={category}
-              onClick={() => setToggle(category)}
-            >
-              {category.toUpperCase()}
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
-        <CardContainer>
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} openModal={openModal} setOpenModal={setOpenModal} />
-          ))}
-        </CardContainer>
-      </Wrapper>
-    </Container>
-  );
-};
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Projects = ({ tone }) => (
+  <Section id="projects" title="Projects" tone={tone}>
+    <Grid>
+      {projects.map((project, index) => (
+        <ProjectCard key={project.title} project={project} number={String(index + 1).padStart(2, "0")} />
+      ))}
+    </Grid>
+  </Section>
+);
 
 export default Projects;

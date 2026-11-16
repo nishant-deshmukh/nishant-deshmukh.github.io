@@ -1,255 +1,322 @@
+// =====================================================================
+//  ALL SITE CONTENT LIVES IN THIS FILE.
+//  To change text, links, skills, experience or projects, edit it here.
+//  To change an image, replace the file in src/images/ and keep its name.
+// =====================================================================
+
+// ---------- Images ----------
+import profileImage from "../images/profile.png";
+
+import cloudIcon from "../images/skills/cloud.svg";
+import codeIcon from "../images/skills/code.svg";
+import automationIcon from "../images/skills/automation.svg";
+import securityIcon from "../images/skills/security.svg";
+import integrationIcon from "../images/skills/integration.svg";
+import aiIcon from "../images/skills/ai.svg";
+import dataIcon from "../images/skills/data.svg";
+import gitIcon from "../images/skills/git.svg";
+import toolIcon from "../images/skills/tool.svg";
+
+import agentforceBadge from "../images/certifications/agentforce-specialist.png";
+import nextCertBadge from "../images/certifications/next-certification.png";
+
+import runnerzImage from "../images/projects/runnerz.png";
+import blogspotImage from "../images/projects/blogspot.png";
+import stayhubImage from "../images/projects/stayhub.png";
+import awardImage1 from "../images/projects/awards/award-1.png";
+import awardImage2 from "../images/projects/awards/award-2.png";
+
+
+// ---------- Show or hide the Salesforce Implementations section ----------
+export const showImplementations = true;
+
+// ---------- Profile ----------
 export const Bio = {
   name: "Nishant Deshmukh",
-  roles: ["Full Stack Developer", "Programmer"],
-  description:
-    "I am a Full-stack developer with a demonstrated history of training in the information technology and product development field.",
+  title: "Salesforce Developer & Administrator",
+  // Small status pill above the name. Set to "" to hide it.
+  openToWork: "Open to Salesforce Developer roles",
+  tagline:
+    "I build quote-to-cash solutions on Salesforce CPQ, Revenue Cloud Advanced and Salesforce Billing, using Apex, LWC and Flows.",
+  image: profileImage,
+  // Put the resume PDF at public/resume/Nishant_Deshmukh_Resume.pdf
+  // (or replace this with a Google Drive link).
+  resume: process.env.PUBLIC_URL + "/resume/Nishant_Deshmukh_Resume.pdf",
+  email: "nishantdeshmukhdev@gmail.com",
+  // Set a number (e.g. "+91 98765 43210") to show a Phone card in Contact.
+  phone: "",
+  location: "Pune, Maharashtra, India",
+  linkedin: "https://www.linkedin.com/in/nishant-deshmukh-dev/",
   github: "https://github.com/nishant-deshmukh",
-  resume:
-    "https://drive.google.com/file/d/1WtKz7UM95PdvAEHFFZgU8yUr1axKA18F/view?usp=sharing",
-  linkedin: "https://www.linkedin.com/in/ndeshmukhwork",
-  twitter: "https://twitter.com",
-  insta: "https://www.instagram.com/nishant362001/",
+  trailhead: "https://www.salesforce.com/trailblazer/yyxckwksp8z5ei6jho",
+  // Tags floating around the profile photo
+  heroChips: [
+    { label: "Apex & LWC", position: { top: 44, left: -56 }, delay: 0 },
+    { label: "Salesforce CPQ", position: { top: 200, right: -70 }, delay: 1.2 },
+    { label: "Revenue Cloud", position: { bottom: 40, left: -40 }, delay: 2.4 },
+  ],
 };
 
+// ---------- Contact section ----------
+export const contact = {
+  heading: "Working on Salesforce CPQ, Revenue Cloud or Billing?",
+  text: "I'm open to Salesforce Developer and Administrator roles. Email is the fastest way to reach me.",
+};
+
+export const about =
+  "Salesforce Developer and Administrator with 1.5+ years of experience building quote-to-cash solutions on Salesforce CPQ, Revenue Cloud Advanced and Salesforce Billing. I specialise in Apex, Lightning Web Components, Flows and SOQL, along with integrations using REST APIs and Named Credentials. My work spans automation, data migration, production troubleshooting, security and access setup, and AI features with Prompt Builder. I enjoy exploring new parts of the platform and turning complex business requirements into clean, reliable Salesforce solutions.";
+// ---------- Navigation (order = order on the page) ----------
+const allNavLinks = [
+  { id: "about", title: "About Me" },
+  { id: "skills", title: "Skills" },
+  { id: "certifications", title: "Certifications" },
+  { id: "experience", title: "Experience" },
+  { id: "implementations", title: "Implementations" },
+  { id: "projects", title: "Projects" },
+  { id: "contact", title: "Contact" },
+];
+
+export const navLinks = allNavLinks.filter(
+  (link) => showImplementations || link.id !== "implementations"
+);
+
+// ---------- Skills ----------
+// Each skill: name + icon. To use an official logo, add the file to
+// src/images/skills/, import it above and set it as the icon.
 export const skills = [
   {
-    title: "Languages",
+    title: "Clouds & Products",
+    highlight: true,
     skills: [
-      {
-        name: "JavaScript",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg",
-      },
-      {
-        name: "TypeScript",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-      },
-      {
-        name: "Java",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/java.svg",
-      },
-      {
-        name: "C++",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/c.svg",
-      },
-      {
-        name: "C#",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/c--4.svg",
-      } 
+      { name: "Salesforce CPQ", icon: cloudIcon },
+      { name: "Revenue Cloud Advanced", icon: cloudIcon },
+      { name: "Salesforce Billing", icon: cloudIcon },
+      { name: "Sales Cloud", icon: cloudIcon },
+      { name: "Conga", icon: cloudIcon },
     ],
   },
   {
-    title: "Frontend",
+    title: "Development",
     skills: [
-      {
-        name: "ReactJS",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-      },
-      {
-        name: "Redux",
-        image: "https://cdn.worldvectorlogo.com/logos/redux.svg",
-      },
-      // {
-      //   name: "NextJS",
-      //   image:
-      //     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4Ab1XAaQqURB9DyohSykREpRIQSAlBCoECKUFCSRCBBEAaSEABQEoCIEASCwAUICALgCo83do0//9v819XX845O7VnDkzOzP7JWGaBd3C3IJpQVjAHeJ+Rs9a97vKLGrBsB1KgMhEP3FMUUwt4ENMfxr1yQIU4SSjRkbeOZtERmHk6pXQVDlnkHh9S+QLTm1hkiz4n/gzFQuny9FoFLquE+i34x+n02k0m00UCoV3BIzn3MMJrVYLtp1OJ0cS/X4f5/MZhmG8IyDsWtDfEaDIn2232/3zbrvdxuFwwGg04qRBt+VnETBNE0IIkE2n07/erdfrWK/X6Ha73Hb9ZXII3G43ivy3dNRqtZe7lUoFs9mM6oBDwCQCgquALT1FT3a5XF7qIZ/PYzgcolqtcggIIgBZAgRKB6lCRalp2uM8k8mAVMrlchwC+DEBipycE4n5fP44j8ViKJVKSCaTbAJCpgaez4vFIsjoWa/XA50FAgEkEgmEw2F2CkxZBZ5Br5tt1ITcbjd8Ph88Hg+7CBefECCsVitS4aVJcV9D/VMCVITk/Hq9YrPZyBBo2a1YMGvAcQYcj0cCtWMugcdYNhjDiBrP25mx3++x3W6RzWZZ8isfxzQLlsslJpMJpYY5jhkqcOH1ejEYDDAej9FoNOByuZxGsfqVzC7KTqcDSkkqleKsZOqX0mAwiHK5DGrJfr+fs5SqX8sjkQji8ThCoRC+v78Za7l6JagrUh3YkUuZpqgwDaecc9VYSDoV5Fg+at7n+eLN57kuE/EvzHr/Kvs31aYAAAAASUVORK5CYII=",
-      // },
-      {
-        name: "HTML",
-        image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
-      },
-      {
-        name: "CSS",
-        image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
-      },
-      {
-        name: "Bootstrap",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg",
-      },
-    ],
-  }, ,
-  {
-    title: "Backend",
-    skills: [
-      {
-        name: "NodeJS",
-        image: "https://nodejs.org/static/images/logo.svg",
-      },
-      {
-        name: "ExpressJS",
-        image:
-          "data:image/png;base64,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",
-      },
-      // {
-      //   name: "NestJS",
-      //   image:
-      //     "https://cdn.worldvectorlogo.com/logos/nestjs.svg",
-      // },
-      {
-        name: "Spring Boot",
-        image:
-          "https://img.icons8.com/?size=100&id=90519&format=png&color=000000",
-      },
-      {
-        name: "MySQL",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
-      }, {
-        name: "MongoDB",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
-      },
+      { name: "Apex", icon: codeIcon },
+      { name: "LWC", icon: codeIcon },
+      { name: "Visualforce", icon: codeIcon },
+      { name: "SOQL", icon: codeIcon },
+      { name: "Triggers", icon: codeIcon },
+      { name: "Batch Apex", icon: codeIcon },
+      { name: "Async Apex", icon: codeIcon },
+      { name: "Test Classes", icon: codeIcon },
+      { name: "Custom Metadata", icon: codeIcon },
     ],
   },
   {
-    title: "Others",
+    title: "Automation",
     skills: [
-      {
-        name: "Git",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
-      },
-      {
-        name: "GitHub",
-        image:
-          "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-      },
-      {
-        name: "Docker",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      },
-      {
-        name: "VS Code",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
-      },
-      {
-        name: "Postman",
-        image:
-          "https://cdn.worldvectorlogo.com/logos/postman.svg",
-      },
+      { name: "Flows", icon: automationIcon },
+      { name: "Flow Orchestration", icon: automationIcon },
+      { name: "Approval Processes", icon: automationIcon },
+      { name: "DLRS", icon: automationIcon },
+      { name: "Price Rules", icon: automationIcon },
+      { name: "Product Rules", icon: automationIcon },
+      { name: "Quote Template", icon: automationIcon },
+      { name: "Conga Template", icon: automationIcon }
+    ],
+  },
+  {
+    title: "Administration",
+    skills: [
+      { name: "Profiles", icon: securityIcon },
+      { name: "Permission Sets", icon: securityIcon },
+      { name: "FLS", icon: securityIcon },
+      { name: "OWD & Sharing", icon: securityIcon },
+      { name: "Record Types", icon: securityIcon },
+      { name: "Validation Rules", icon: securityIcon },
+      { name: "Lightning App Builder", icon: securityIcon },
+      { name: "Reports & Dashboards", icon: securityIcon },
+    ],
+  },
+  {
+    title: "Integrations",
+    skills: [
+      { name: "REST APIs", icon: integrationIcon },
+      { name: "Named Credentials", icon: integrationIcon },
+      { name: "External Client Apps", icon: integrationIcon },
+      { name: "Platform Events", icon: integrationIcon },
+      { name: "Webhooks", icon: integrationIcon },
+      { name: "Postman", icon: toolIcon },
+    ],
+  },
+  {
+    title: "AI, Data & Tools",
+    skills: [
+      { name: "Prompt Builder", icon: aiIcon },
+      { name: "Agentforce", icon: aiIcon },
+      { name: "Data Loader", icon: dataIcon },
+      { name: "Data Migration", icon: dataIcon },
+      { name: "Git", icon: gitIcon },
+      { name: "VS Code", icon: toolIcon },
     ],
   },
 ];
 
+// ---------- Exposure & Training (wide box under the skill groups) ----------
+// label = how it was used. Shown as a small tag on each chip.
+export const exposure = {
+  title: "Exposure & Training",
+  items: [
+    { name: "MuleSoft", label: "Training", icon: integrationIcon },
+    { name: "Data Cloud", label: "Exposure", icon: cloudIcon },
+    { name: "Experience Cloud", label: "Exposure", icon: cloudIcon },
+    { name: "Einstein Activity Capture", label: "Exposure", icon: aiIcon },
+    { name: "Workato", label: "US Client", icon: integrationIcon },
+    { name: "Zapier", label: "US Client", icon: automationIcon },
+    { name: "Intercom", label: "US Client", icon: toolIcon },
+    { name: "APITemplate.io", label: "US Client", icon: codeIcon },
+    { name: "Lucidchart", label: "Diagrams", icon: toolIcon },
+  ],
+};
 
+// ---------- Certifications ----------
+export const certifications = [
+  {
+    name: "Salesforce Certified Agentforce Specialist",
+    status: "Certified · Dec 2025",
+    image: agentforceBadge,
+  },
+  {
+    // Placeholder: replace with the next certification when earned,
+    // or delete this block.
+    name: "[Next certification]",
+    status: "Add when earned",
+    image: nextCertBadge,
+    placeholder: true,
+  },
+];
+
+// ---------- Experience (newest first) ----------
 export const experiences = [
   {
-    id: 0,
-    img: "https://media.licdn.com/dms/image/v2/C560BAQHGQzPwHZ1-sA/company-logo_200_200/company-logo_200_200/0/1630658280357?e=2147483647&v=beta&t=8V3jtGLNVW809eyBtBkH3pdWmo5AsWHdQcUUzplQNJM",
-    role: "PG-DAC Trainee",
+    role: "Salesforce Developer (Associate Technical Consultant)",
+    company: "Blueflame Labs",
+    location: "Pune, Maharashtra, India",
+    date: "Jul 2025 - Present",
+    award: {
+      title: "Rookie of TR14 award",
+      description: "Recognized for standout performance among 57 trainees.",
+      images: [
+        { src: awardImage1, alt: "Rookie of TR14 medal" },
+        { src: awardImage2, alt: "Rookie of TR14 award" },
+      ],
+    },
+    points: [
+      "Delivered Salesforce solutions on **Sales Cloud, CPQ, Revenue Cloud Advanced and Billing** for field-services, healthcare and financial-services clients, configuring product rules, price rules and bundles that enabled **accurate pricing** and a smoother quoting process.",
+      "Optimized slow business automation by removing **repeated trigger and Flow runs**, which made key workflows **up to 5x faster** and gave users quicker, more reliable record updates.",
+      "Audited every active product in Production with **30+ SOQL checks** to catch linked records that could break during migration, and shared the findings in a **client-ready Excel report** that guided a safe go-live.",
+      "Rehearsed a **critical product migration** across multiple sandboxes, defining the order for retiring old products and activating new ones, and timed every run to give the client a **tested time estimate** for the product replacement.",
+      "Managed **admin work** across security, record types, page layouts, approval processes and Lightning pages, plus data import and export jobs, deploying through **change sets with rollback plans** to keep every release safe.",
+      "Led **a 20-hour and a 60-hour task**, guiding **5 to 6 peers** working under each one, dividing the work and supporting **overnight production deployments**, which resulted in seamless delivery of both tasks.",
+      "Worked independently on a **US-based client project**, managing requirements, updates and delivery directly with the client team over Slack and Asana, which **built client trust** and kept work on track across time zones.",
+    ],
+    current: true,
+  },
+  {
+    role: "Software Developer (Independent Projects)",
+    company: "Self-employed",
+    location: "Pune, Maharashtra, India",
+    date: "Feb 2025 - Jun 2025",
+    points: [
+      "Developed Runnerz, a Spring Boot 3 run-tracking app with full CRUD REST APIs and PostgreSQL persistence.",
+      "Built BlogSpot, a blogging platform with JWT authentication and CRUD operations using React, Node.js and MySQL.",
+    ],
+  },
+  {
+    role: "Software Developer Trainee (PG-DAC)",
     company: "SunBeam Institute of Information Technology",
+    location: "Karad, India",
     date: "Aug 2024 - Feb 2025",
-    project:
-      "Project: StayHub – PG accommodation management platform developed as part of the PG-DAC program at Sunbeam.",
-    projectRole: "Full stack developer",
-    desc: "\u2022  Developed backend APIs using Spring Boot and MySQL.\n \u2022 Created custom UI components in React.js/Next.js.\n \u2022 Integrated Razorpay for secure payments and JWT for authentication.\n \u2022 Implemented role-based access and API validation with Postman.\n \u2022 Designed the complete UI/UX in Figma for a seamless user experience.",
-    skills: [
-      "JavaScript",
-      "React.js",
-      "Redux",
-      "Node.js",
-      // "Typescript",
-      "Express.js",
-      // "Next.js",
-      "MySql",
-      // "Nest.js",
-      "Git",
-      "Docker",
-      // "AWS",
-      "HTML",
-      "CSS",
+    points: [
+      "Built StayHub, a PG accommodation platform, as the capstone project of the PG-DAC program.",
+      "Developed REST APIs using Java, Spring Boot and MySQL, with JWT authentication and role-based access.",
+      "Integrated Razorpay for secure payments and validated APIs with Postman.",
     ],
   },
 ];
 
-export const education = [
+// ---------- Salesforce Implementations (Blueflame Labs client work) ----------
+// Keep client names out: describe each client by type instead.
+export const implementations = [
   {
-    id: 0,
-    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548192/sunbeamlogo3_ym3hsd.jpg",
-    school: "SunBeam Institute of Information Technology, Karad-Pune",
-    date: "Aug 2024 - Feb 2025",
-    grade: "B",
-    degree: "Post Graduate Diploma in Advanced Computing (PG-DAC)",
+    product: "Revenue Cloud Advanced",
+    title: "Product Migration to Revenue Cloud",
+    client: "Field-services client · Data analysis + migration readiness",
+    points: [
+      "Analyzed 30 production bundle products across UOM, catalog, selling models and price books.",
+      "Built isolated test data to validate Product Catalog and UOM behaviour before migration.",
+      "Turned the findings into a step-by-step rehearsal runbook with rollback planning.",
+    ],
+    tags: ["RCA", "Product Catalog", "SOQL", "Runbooks"],
   },
   {
-    id: 1,
-    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746545565/met_kqk7vx.jpg",
-    school: "Mumbai Educational Trust, MET League of Colleges",
-    date: "June 2018 - May 2023",
-    grade: "7.77 CGPA",
-    degree: "Bachelor of Engineering - Mechanical Engineering",
+    product: "Salesforce CPQ",
+    title: "Quote Template Revamp",
+    client: "Enterprise client · Implementation + QA",
+    points: [
+      "Built 22 CPQ quote templates with conditional sections, legal terms and line columns.",
+      "Fixed HTML and layout issues so quotes generate as clean, client-ready PDFs.",
+      "Tested every template variant against real quote scenarios.",
+    ],
+    tags: ["CPQ", "Quote Templates", "HTML", "QA"],
   },
   {
-    id: 2,
-    img: "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548205/440697158-15c6342a-1b77-4825-8293-33b903259ff9_mbiyct.png",
-    school: "K.J. Mehata & E.Y. Phadol Jr College, Nasik",
-    date: "June 2017 - May 2018",
-    grade: "64.00%",
-    degree: "HSC(XII) Central Board of Secondary Education",
+    product: "Agentforce · Prompt Builder",
+    title: "AI Summaries for Leads and Cases",
+    client: "Internal sales and support teams · Implementation",
+    points: [
+      "Generated AI summaries from Chatter, customer interactions and record history.",
+      "Reduced manual review of Lead and Case records by about 40%.",
+    ],
+    tags: ["Prompt Builder", "Agentforce", "Flows"],
   },
   {
-    id: 3,
-    img:
-     "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548205/440697158-15c6342a-1b77-4825-8293-33b903259ff9_mbiyct.png",
-    school: "K.J. Mehata & E.Y. Phadol Jr College, Nasik",
-    date: "June 2015 - May 2016",
-    grade: "80.60%",
-    degree: "SSC(X) Central Board of Secondary Education",
+    product: "Sales Cloud",
+    title: "Email Thread to Task Automation",
+    client: "Services client · Implementation + testing",
+    points: [
+      "Built an Apex handler and Flow to turn email threads into tracked Tasks.",
+      "Added validation rules and picklist values, with positive and negative test scenarios.",
+      "Wrote Apex test classes and a report to track the automated Tasks.",
+    ],
+    tags: ["Apex", "Flows", "Validation Rules", "Test Classes"],
   },
 ];
 
+// ---------- Projects ----------
 export const projects = [
   {
-    id: 1,
     title: "Runnerz",
     date: "Mar 2025",
-    description: "Runnerz is a web application built with Java and Spring Boot 3 that allows users to track and manage their running data. Users can record, view, modify, and delete their run details, such as distance, time, and date.",
-    image:
-    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548228/440432987-3916f6ee-ff51-4f15-a5c2-c1d21638e72f_kglwat.png",
-    tags: ["React Js", "Redux", "Firebase", "Firestore"],
-    category: "web app",
+    description:
+      "Run-tracking web app where users record, view, update and delete runs through full CRUD REST APIs, backed by PostgreSQL.",
+    tags: ["Java", "Spring Boot", "REST APIs", "PostgreSQL"],
+    image: runnerzImage,
     github: "https://github.com/nishant-deshmukh/runnerz-run-management",
-    webapp: "https://github.com/nishant-deshmukh/runnerz-run-management"
   },
   {
-    id: 2,
+    title: "BlogSpot",
+    date: "May 2025",
+    description:
+      "Blogging platform with JWT login, CRUD operations for posts, a personal posts view and a rich text editor.",
+    tags: ["React", "Node.js", "Express", "MySQL"],
+    image: blogspotImage,
+    github: "https://github.com/nishant-deshmukh/BlogSpot-Blogging-Platform",
+  },
+  {
     title: "StayHub",
     date: "Feb 2025",
     description:
-      "StayHub is a user-friendly platform that simplifies the process of finding and booking PG (Paying Guest) accommodations. It allows PG owners to register, list detailed property information, manage room availability, and ensure accurate, up-to-date listings for potential tenants.",
-    image:
-    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548500/440431248-94b2fd3b-dcef-4cec-bd15-2033b477c86d_nz8uyr.png",
-    tags: ["React Js", "Firebase", "Firestore", "Node JS"],
-    category: "web app",
+      "PG accommodation platform where owners list properties and manage rooms, with JWT auth, role-based access and Razorpay payments.",
+    tags: ["Spring Boot", "MySQL", "React", "Razorpay"],
+    image: stayhubImage,
     github: "https://github.com/smokiesam/CDAC_PROJECT_KD_J028",
-    webapp: "https://github.com/smokiesam/CDAC_PROJECT_KD_J028",
   },
-  {
-    id: 3,
-    title: "...",
-    date: "Apr 2025",
-    description: "work in progress",
-    image:
-    "https://res.cloudinary.com/djyztsvfk/image/upload/v1746548186/link2-Photoroom_uahsle.png",
-    tags: ["React Js", "Node JS"],
-    category: "web app",
-    github: "",
-    webapp: "",
-  },
-];
-
-export const TimeLineData = [
-  { year: 2024, text: "Started my journey" },
-  { year: 2024, text: "Worked as a freelance developer" },
-  { year: 2024, text: "Founded JavaScript Mastery" },
-  { year: 2025, text: "Shared my projects with the world" },
-  { year: 2025, text: "Started my own platform" },
 ];
