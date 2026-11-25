@@ -186,7 +186,7 @@ export const certifications = [
   {
     // Placeholder: replace with the next certification when earned,
     // or delete this block.
-    name: "[Next certification]",
+    name: "Salesforce Platform Developer I (PD1)",
     status: "In Progress",
     image: nextCertBadge,
     placeholder: true,
